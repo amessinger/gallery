@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "serve": "yarn eleventy --serve",
+    "build": "yar eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3"
+  }
+}
