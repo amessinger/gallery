@@ -1,11 +1,13 @@
 {
   "scripts": {
     "serve": "yarn eleventy --serve",
-    "build": "yar eleventy"
+    "build": "yarn eleventy",
+    "deploy": "node deploy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "fs-extra": "^8.1.0",
+    "ftp-deploy": "^2.3.3",
     "marked": "^0.7.0",
     "sharp": "^0.22.1"
   }

@@ -1,0 +1,45 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+      environment:
+        JOBS: "1"
+  working_directory: ~/app
+
+version: 2.1
+
+jobs:
+  setup:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn build && yarn deploy
+
+workflows:
+  version: 2
+  setup_and_deploy:
+    jobs:
+      - setup
+      - deploy:
+          requires:
+            - setup
+          filters:
+            branches:
+              only: master
