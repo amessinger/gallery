@@ -1,0 +1,32 @@
+backend:
+  name: "test-repo"
+
+media_folder: "images"
+
+collections:
+  - name: "series"
+    label: "Series"
+    folder: "series"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - name: "title"
+        label: "Title"
+        widget: "string"
+      - name: "description"
+        label: "Description"
+        widget: "markdown"
+      - name: "photos"
+        label: "Photos"
+        widget: "list"
+        fields:
+          - name: "title"
+            label: "Title"
+            widget: "string"
+          - name: "description"
+            label: "Description"
+            widget: "string"
+          - name: "image"
+            label: "Image"
+            widget: "image"
+        
