@@ -4,6 +4,6 @@ layout: layouts/base.njk
 
 {{ description | markdownToHTML | safe }}
 
-{% for item in photos %}
-  <img src="{{ item.photo | imageResize(200) }}"/>
+{% for photo in photos %}
+  <img src="{{ photo.image | imageResize(200) }}"/>
 {% endfor %}
