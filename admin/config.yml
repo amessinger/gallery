@@ -10,6 +10,8 @@ collections:
     folder: "series"
     create: true
     slug: "{{title}}"
+    editor:
+      preview: false
     fields:
       - name: "title"
         label: "Title"
@@ -21,12 +23,13 @@ collections:
         label: "Photos"
         widget: "list"
         fields:
-          - name: "title"
-            label: "Title"
-            widget: "string"
-          - name: "description"
-            label: "Description"
-            widget: "string"
           - name: "image"
             label: "Image"
             widget: "image"
+          - name: "title"
+            label: "Title"
+            widget: "string"
+          - name: "comment"
+            label: "Comment"
+            widget: "string"
+            required: false

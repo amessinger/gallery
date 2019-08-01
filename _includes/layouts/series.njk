@@ -7,5 +7,8 @@ layout: layouts/base.njk
 {{ description | markdownToHTML | safe }}
 
 {% for photo in photos %}
-  <img src="{{ photo.image | imageResize(200) }}"/>
+  <figure>
+    <img src="{{ photo.image | imageResize(200) }}"/>
+    <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
+  </figure>
 {% endfor %}
