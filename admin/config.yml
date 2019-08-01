@@ -1,12 +1,33 @@
-# backend:
-#   name: "github"
-#   repo: "amessinger/gallery"
 backend:
-  name: test-repo
+  name: "github"
+  repo: "amessinger/gallery"
 
 media_folder: "images"
 
 collections:
+  - name: "pages"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+      - name: "index"
+        label: "Index"
+        file: "index.md"
+        fields:
+          - name: "cover"
+            label: "Cover"
+            widget: "image"
+      - name: "about"
+        label: "About"
+        file: "about.md"
+        fields:
+          - name: "about"
+            label: "About"
+            widget: "markdown"
+          - name: "instagram"
+            label: "Instagram"
+            widget: "string"
+
   - name: "series"
     label: "Series"
     folder: "series"
