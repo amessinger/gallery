@@ -30,4 +30,3 @@ collections:
           - name: "image"
             label: "Image"
             widget: "image"
-        
