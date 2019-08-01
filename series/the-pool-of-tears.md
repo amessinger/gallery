@@ -7,5 +7,8 @@ The gardener set his eldest son to watch; but about twelve o’clock he fell asl
 photos:
   - title: Gulf of Mexico, 2019.
     comment: Gelatin-silver print.
-    image: /images/notre-dame.jpg
+    image: /images/gulf-of-mexico.jpg
+  - title: Annecy Lake, 2019.
+    comment: Gelatin-silver print.
+    image: /images/annecy-lake.jpg
 ---

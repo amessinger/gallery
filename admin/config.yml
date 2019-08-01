@@ -1,6 +1,8 @@
+# backend:
+#   name: "github"
+#   repo: "amessinger/gallery"
 backend:
-  name: "github"
-  repo: "amessinger/gallery"
+  name: test-repo
 
 media_folder: "images"
 

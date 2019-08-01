@@ -2,13 +2,30 @@
 layout: layouts/base.njk
 ---
 
+<style>
+  figure {
+    display: none;
+  }
+  figure:target {
+    display: block;
+  }
+</style>
+
 {% include "partials/menu.njk" %}
 
 {{ description | markdownToHTML | safe }}
 
+{# lightbox #}
 {% for photo in photos %}
-  <figure>
-    <img src="{{ photo.image | imageResize(200) }}"/>
+  <figure id="{{ photo.title | slug }}">
+    <img src="{{ photo.image | imageResize(1024) }}"/>
     <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
   </figure>
 {% endfor %}
+
+{# carousel #}
+<ul>
+  {% for photo in photos %}
+    <li><a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(200) }}"/></a></li>
+  {% endfor %}
+</ul>
