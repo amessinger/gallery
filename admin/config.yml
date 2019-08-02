@@ -12,14 +12,14 @@ collections:
     files:
       - name: "index"
         label: "Index"
-        file: "index.md"
+        file: "pages/index.md"
         fields:
           - name: "cover"
             label: "Cover"
             widget: "image"
       - name: "about"
         label: "About"
-        file: "about.md"
+        file: "pages/about.md"
         fields:
           - name: "about"
             label: "About"
@@ -29,7 +29,7 @@ collections:
             widget: "string"
       - name: "contact"
         label: "Contact"
-        file: "contact.md"
+        file: "pages/contact.md"
         fields:
           - name: "email"
             label: "Email address"
