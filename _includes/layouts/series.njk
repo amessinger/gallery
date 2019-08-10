@@ -3,6 +3,17 @@ layout: layouts/base.njk
 ---
 
 <style>
+  main {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  /* lightbox */
   figure {
     display: none;
   }
@@ -15,25 +26,50 @@ layout: layouts/base.njk
   figure:target ~ figure.default {
     display: none;
   }
+
+  /* carousel */
+  ul.carousel {
+    min-height: 400px;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+  }
+  ul.carousel:after {
+    display: block;
+    content: " invisible node ";
+    flex: 999 999 auto;
+  }
+  ul.carousel li {
+    flex: 0 0 auto;
+    margin: 5px;
+  }
 </style>
 
-{{ description | markdownToHTML | safe }}
-
-{# lightbox #}
-{% for photo in photos %}
-  <figure id="{{ photo.title | slug }}">
-    <img src="{{ photo.image | imageResize(1024) }}"/>
-    <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
-  </figure>
-{% endfor %}
-<figure class="default">
-  <img src="{{photos[0].image | imageResize(1024)}}"/>
-  <figcaption><strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}</figcaption>
-</figure>
-
-{# carousel #}
-<ul>
+<section class="lightbox">
+  {# lightbox #}
   {% for photo in photos %}
-    <li><a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(200) }}"/></a></li>
+    <figure id="{{ photo.title | slug }}">
+      <img src="{{ photo.image | imageResize(1024) }}"/>
+      <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
+    </figure>
   {% endfor %}
-</ul>
+  <figure class="default">
+    <img src="{{photos[0].image | imageResize(1024)}}"/>
+    <figcaption><strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}</figcaption>
+  </figure>
+  
+  {# carousel #}
+  <nav class="carousel">
+    {% for photo in photos %}
+      <a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(200) }}"/></a>
+    {% endfor %}
+  </nav>
+</section>
+
+<aside>
+{{ description | markdownToHTML | safe }}
+</aside>
