@@ -27,6 +27,13 @@ layout: layouts/base.njk
     display: none;
   }
 
+  figure {
+    margin: 0;
+  }
+  figure img {
+    width: 100%;
+  }
+
   /* carousel */
   ul.carousel {
     min-height: 400px;
@@ -65,7 +72,7 @@ layout: layouts/base.njk
   {# carousel #}
   <nav class="carousel">
     {% for photo in photos %}
-      <a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(200) }}"/></a>
+      <a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(80) }}"/></a>
     {% endfor %}
   </nav>
 </section>
