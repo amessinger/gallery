@@ -9,6 +9,12 @@ layout: layouts/base.njk
   figure:target {
     display: block;
   }
+  figure.default {
+    display: block;
+  }
+  figure:target ~ figure.default {
+    display: none;
+  }
 </style>
 
 {{ description | markdownToHTML | safe }}
@@ -20,6 +26,10 @@ layout: layouts/base.njk
     <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
   </figure>
 {% endfor %}
+<figure class="default">
+  <img src="{{photos[0].image | imageResize(1024)}}"/>
+  <figcaption><strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}</figcaption>
+</figure>
 
 {# carousel #}
 <ul>
