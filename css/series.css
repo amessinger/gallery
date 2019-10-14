@@ -24,6 +24,9 @@ main {
 
   figure {
     margin: 0;
+    /* prevent scroll to anchor */
+    margin-top: -6rem;
+    padding-top: 6rem;
   }
   figure img {
     width: 100%;
