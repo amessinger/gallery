@@ -64,3 +64,11 @@ nav.carousel input[type="checkbox"][name="carousel-items-toggle"] {
 nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + ul.carousel-items {
   opacity: 1;
 }
+
+.description {
+  opacity: 0;
+  transition: opacity .4s;
+}
+input[type="checkbox"][name="description-toggle"]:checked + article.description {
+  opacity: 1;
+}

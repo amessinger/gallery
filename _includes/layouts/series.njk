@@ -34,5 +34,9 @@ layout: layouts/base.njk
 </section>
 
 <aside>
-{{ description | markdownToHTML | safe }}
+  <label for="description-toggle">Show description</label>
+  <input type="checkbox" name="description-toggle" id="description-toggle"/>
+  <article class="description">
+    {{ description | markdownToHTML | safe }}
+  </article>
 </aside>
