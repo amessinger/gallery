@@ -19,9 +19,17 @@ layout: layouts/base.njk
   
   {# carousel #}
   <nav class="carousel">
-    {% for photo in photos %}
-      <a href="#{{ photo.title | slug }}"><img src="{{ photo.image | imageResize(80) }}"/></a>
-    {% endfor %}
+    <label for="carousel-items-toggle">Show carousel</label>
+    <input type="checkbox" name="carousel-items-toggle" id="carousel-items-toggle"/>
+    <ul class="carousel-items">
+      {% for photo in photos %}
+        <li>
+          <a href="#{{ photo.title | slug }}">
+            <img src="{{ photo.image | imageResize(80) }}"/>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </nav>
 </section>
 

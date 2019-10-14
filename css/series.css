@@ -1,54 +1,66 @@
 main {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
-  }
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
 
-  /* lightbox */
-  figure {
-    display: none;
-  }
-  figure:target {
-    display: block;
-  }
-  figure.default {
-    display: block;
-  }
-  figure:target ~ figure.default {
-    display: none;
-  }
+/* lightbox */
+figure {
+  display: none;
+}
+figure:target {
+  display: block;
+}
+figure.default {
+  display: block;
+}
+figure:target ~ figure.default {
+  display: none;
+}
 
-  figure {
-    margin: 0;
-    /* prevent scroll to anchor */
-    margin-top: -6rem;
-    padding-top: 6rem;
-  }
-  figure img {
-    width: 100%;
-  }
+figure {
+  margin: 0;
+  /* prevent scroll to anchor */
+  margin-top: -6rem;
+  padding-top: 6rem;
+}
+figure img {
+  width: 100%;
+}
 
-  /* carousel */
-  ul.carousel {
-    min-height: 400px;
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: flex-start;
-  }
-  ul.carousel:after {
-    display: block;
-    content: " invisible node ";
-    flex: 999 999 auto;
-  }
-  ul.carousel li {
-    flex: 0 0 auto;
-    margin: 5px;
-  }
+/* carousel */
+nav.carousel {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+ul.carousel-items {
+  max-height: 400px;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+
+  /* setting up animation */
+  opacity: 0;
+  transition: opacity .4s;
+}
+ul.carousel-items li {
+  list-style-type: none;
+  flex: 0 0 auto;
+  margin: 5px;
+}
+nav.carousel input[type="checkbox"][name="carousel-items-toggle"] {
+  flex: 0 0 auto;
+}
+nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + ul.carousel-items {
+  opacity: 1;
+}
