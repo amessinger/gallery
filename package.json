@@ -10,5 +10,8 @@
     "ftp-deploy": "^2.3.3",
     "marked": "^0.7.0",
     "sharp": "^0.22.1"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.1.3"
   }
 }
