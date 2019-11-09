@@ -16,9 +16,13 @@ layout: layouts/base.njk
     <img src="{{photos[0].image | imageResize(1024)}}"/>
     <figcaption><strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}</figcaption>
   </figure>
-  
+
   {# carousel #}
   <nav class="carousel">
+    <div>
+      <button class="cursor-previous">Previous</button>
+      <button class="cursor-next">Next</button>
+    </div>
     <label for="carousel-items-toggle">Show carousel</label>
     <input type="checkbox" name="carousel-items-toggle" id="carousel-items-toggle"/>
     <ul class="carousel-items">
@@ -40,3 +44,41 @@ layout: layouts/base.njk
     {{ description | markdownToHTML | safe }}
   </article>
 </aside>
+
+<script>
+  document.querySelector('button.cursor-next').addEventListener('click', () => {
+    let displayedFigure = document.querySelector('.lightbox figure:target');
+
+    // if displayed figure is default (no target), select actual first figure
+    if (!displayedFigure) {
+      displayedFigure = document.querySelector('.lightbox figure')
+    }
+
+    let nextFigure = displayedFigure.nextElementSibling;
+
+    // if next figure is default (no id), select actual first figure
+    if (nextFigure.id === '') {
+      nextFigure = document.querySelector('.lightbox figure')
+    }
+
+    window.location.hash = nextFigure.id
+  })
+
+  document.querySelector('button.cursor-previous').addEventListener('click', () => {
+    let displayedFigure = document.querySelector('.lightbox figure:target');
+
+    // if default figure (no target), select actual first figure
+    if (!displayedFigure) {
+      displayedFigure = document.querySelector('.lightbox figure')
+    }
+
+    let previousFigure = displayedFigure.previousElementSibling;
+
+    if (!previousFigure) {
+      let figures = document.querySelectorAll('.lightbox figure')
+      previousFigure = figures[figures.length-2]
+    }
+
+    window.location.hash = previousFigure.id
+  })
+</script>
