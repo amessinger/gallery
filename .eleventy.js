@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('admin');
   eleventyConfig.addPassthroughCopy('images');
   eleventyConfig.addPassthroughCopy('css');
+  eleventyConfig.addPassthroughCopy('icons');
 
   eleventyConfig.addNunjucksFilter('markdownToHTML', markdownToHTML);
   eleventyConfig.addNunjucksAsyncFilter('imageResize', imageResize);

@@ -8,13 +8,19 @@ layout: layouts/base.njk
   {# lightbox #}
   {% for photo in photos %}
     <figure id="{{ photo.title | slug }}">
-      <img src="{{ photo.image | imageResize(1024) }}"/>
-      <figcaption><strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}</figcaption>
+      <div class="img" style="background-image: url({{ photo.image | imageResize(1024) }});"></div>
+      <figcaption>
+        <span class="counter">{{ loop.index }} of {{ loop.length }}</span>
+        <strong><em>{{photo.title}}</em></strong>{% if photo.comment %} {{photo.comment}}{% endif %}
+      </figcaption>
     </figure>
   {% endfor %}
   <figure class="default">
-    <img src="{{photos[0].image | imageResize(1024)}}"/>
-    <figcaption><strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}</figcaption>
+    <div class="img" style="background-image: url({{photos[0].image | imageResize(1024)}});"></div>
+    <figcaption>
+      <span class="counter">1 of {{ photos.length }}</span>
+      <strong><em>{{photos[0].title}}</em></strong>{% if photos[0].comment %} {{photos[0].comment}}{% endif %}
+    </figcaption>
   </figure>
 
   {# carousel #}
@@ -25,15 +31,17 @@ layout: layouts/base.njk
     </div>
     <label for="carousel-items-toggle">Show carousel</label>
     <input type="checkbox" name="carousel-items-toggle" id="carousel-items-toggle"/>
-    <ul class="carousel-items">
-      {% for photo in photos %}
-        <li>
-          <a href="#{{ photo.title | slug }}">
-            <img src="{{ photo.image | imageResize(80) }}"/>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div class=".carousel-items-wrapper">
+      <ul class="carousel-items">
+        {% for photo in photos %}
+          <li>
+            <a href="#{{ photo.title | slug }}">
+              <img src="{{ photo.image | imageResize(80) }}"/>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </nav>
 </section>
 

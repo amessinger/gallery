@@ -2,8 +2,10 @@
 layout: layouts/base.njk
 ---
 
+<link rel="stylesheet" href="/css/about.css"/>
+
 <h1>About</h1>
 
-{{ about | markdownToHTML | safe }}
+<article>{{ about | markdownToHTML | safe }}</article>
 
-<a href="https://www.instagram.com/{{instagram}}">{{instagram}}</a>
+<a class="instagram" href="https://www.instagram.com/{{instagram}}">{{instagram}}</a>

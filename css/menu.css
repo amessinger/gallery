@@ -1,0 +1,60 @@
+.menu {
+  padding-right: 4rem;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu a:visited {
+  color: inherit;
+}
+
+.menu h1 {
+  text-align: right;
+  font-weight: 400;
+  margin-top: .5rem;
+}
+
+.menu ul {
+  margin-top: 6rem;
+  text-align: right;
+}
+
+.menu li {
+  list-style-type: none;
+  line-height: 1.6rem;
+  margin-right: -1rem;
+}
+
+.menu li:after {
+  content: '';
+  display: inline-block;
+  height: .5rem;
+  width: .5rem;
+  margin-left: .5rem;
+  background-image: url(/icons/hover-item.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.menu li:hover:after {
+  opacity: 1;
+}
+
+.menu li.active:after {
+  content: '';
+  display: inline-block;
+  height: .5rem;
+  width: .5rem;
+  margin-left: .5rem;
+  background-image: url(/icons/active-item.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.menu ul.static-pages {
+  font-size: 14px;
+}
