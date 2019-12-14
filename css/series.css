@@ -93,8 +93,29 @@ ul.carousel-items li img {
 }
 nav.carousel input[type="checkbox"][name="carousel-items-toggle"] {
   flex: 0 0 auto;
+  display: none;
 }
-nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + div ul.carousel-items {
+
+nav.carousel input[type="checkbox"][name="carousel-items-toggle"] + label {
+  color: transparent;
+
+  content: '';
+  display: inline-block;
+  height: 1.9rem;
+  width: 1.9rem;
+  background-image: url(/icons/gallery.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + label {
+  height: 1.9rem;
+  width: 1.9rem;
+  background-image: url(/icons/close.svg);
+}
+
+nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + label + div ul.carousel-items {
   opacity: 1;
 }
 
