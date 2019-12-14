@@ -98,6 +98,7 @@ nav.carousel input[type="checkbox"][name="carousel-items-toggle"] {
 
 nav.carousel input[type="checkbox"][name="carousel-items-toggle"] + label {
   color: transparent;
+  margin: 0 .3rem;
 
   content: '';
   display: inline-block;
@@ -117,6 +118,29 @@ nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + labe
 
 nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + label + div ul.carousel-items {
   opacity: 1;
+}
+
+button.cursor-previous, button.cursor-next {
+  border: none;
+  background: inherit;
+  margin: 0 .3rem;
+
+  color: transparent;
+  content: '';
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+button.cursor-previous {
+  background-image: url(/icons/previous.svg);
+}
+
+button.cursor-next {
+  background-image: url(/icons/next.svg);
 }
 
 .description {
