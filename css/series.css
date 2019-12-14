@@ -103,6 +103,29 @@ nav.carousel input[type="checkbox"][name="carousel-items-toggle"]:checked + div 
   transition: opacity .4s;
   color: rgb(26, 26, 26);
 }
-input[type="checkbox"][name="description-toggle"]:checked + article.description {
+
+input[type="checkbox"][name="description-toggle"] {
+  display: none;
+}
+
+input[type="checkbox"][name="description-toggle"] + label {
+  color: transparent;
+  content: '';
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url(/icons/text.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+input[type="checkbox"][name="description-toggle"]:checked + label {
+  height: 1.3rem;
+  width: 1.3rem;
+  background-image: url(/icons/close.svg);
+}
+
+input[type="checkbox"][name="description-toggle"]:checked + label + article.description {
   opacity: 1;
 }

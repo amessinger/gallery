@@ -46,8 +46,8 @@ layout: layouts/base.njk
 </section>
 
 <aside>
-  <label for="description-toggle">Show description</label>
   <input type="checkbox" name="description-toggle" id="description-toggle"/>
+  <label for="description-toggle">Show description</label>
   <article class="description">
     {{ description | markdownToHTML | safe }}
   </article>
