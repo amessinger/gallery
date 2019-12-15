@@ -11,8 +11,8 @@ photos:
   - comment: Popopopopo.
     image: /images/img_9645.jpg
     title: Mmamz.
-  - comment: Ayayaya.
-    image: /images/presentation.jpg
-    title: Foto/
+  - comment: VVVEIFUC.
+    image: /images/img_9584.jpg
+    title: OJO.
 ---
 
