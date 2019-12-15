@@ -7,11 +7,11 @@ description: >-
   The king became very angry at this, and ordered the gardener to keep watch all
   night under the tree.
 photos:
-  - comment: ùùù
+  - comment: Print 2045.
     image: /images/img_9641.jpg
-    title: Sususu
-  - comment: §'"§"
+    title: 'Sususu. '
+  - comment: jnnuefo odipm.
     image: /images/img_9644.jpg
-    title: dddd
+    title: dddd bla.
 ---
 
