@@ -144,6 +144,7 @@ button.cursor-next {
 }
 
 .description {
+  font-family: 'Lato', sans-serif;
   opacity: 0;
   transition: opacity .4s;
   color: rgb(26, 26, 26);
