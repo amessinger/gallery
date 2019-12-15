@@ -1,3 +1,4 @@
 ---
-cover: /images/annecy-lake.jpg
+cover: /images/img_9643.jpg
 ---
+
