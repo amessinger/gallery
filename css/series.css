@@ -90,6 +90,7 @@ ul.carousel-items li img {
   height: 56px;
   display: block;
   object-fit: cover;
+  border: 1px solid rgb(102, 102, 102);
 }
 nav.carousel input[type="checkbox"][name="carousel-items-toggle"] {
   flex: 0 0 auto;
